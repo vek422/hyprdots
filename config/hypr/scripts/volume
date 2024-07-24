@@ -1,0 +1,42 @@
+#Volume
+
+get_volume(){
+ dunstify -h string:x-dunst-stack-tag:audio "Volume $(pamixer --get-volume)"
+
+}
+
+inc_volume(){
+  pamixer -i 5
+}
+
+dec_volume(){
+  pamixer -d 5
+}
+
+toggle_mute(){
+  if [ $(pamixer --get-mute) == "true" ] 
+  then
+    pamixer -u 
+  else
+    pamixer -m 
+  fi
+}
+
+case $1 in
+  
+  toggle_mute) 
+    toggle_mute
+    ;;
+  dec_volume)
+    dec_volume
+    ;;
+  inc_volume)
+    inc_volume
+    ;;
+  get-volume)
+    get_volume
+    ;;
+  *)
+    get_volume
+    ;;
+esac

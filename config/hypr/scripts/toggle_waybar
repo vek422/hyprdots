@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+process_name="waybar"
+
+if pidof $process_name > /dev/null ;then
+  kill $(pidof $process_name)
+else
+  ~/.config/hypr/scripts/launch_waybar 
+fi
