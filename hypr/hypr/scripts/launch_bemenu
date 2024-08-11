@@ -1,0 +1,1 @@
+bemenu-run --accept-single --auto-select --single-instance --hp 10 -p "whut??"  --ch 20 --fn "ComicShannsMono Nerd Font 12" -H 40 -R 12  --fb "#1E1E28" --nb "#1E1E28" --tb "#1E1E28" --ab "#1E1E28" --hb "#A4B9EF" --hf "#1E1E28" --tf "#A4B9EF"

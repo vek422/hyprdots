@@ -1,0 +1,17 @@
+get_profile(){
+  dunstify -h string:x-dunst-stack-tag:rog "$(asusctl profile -p)" 
+}
+
+toggle_next(){
+  asusctl profile -n & get_profile
+}
+
+case $1 in 
+  toggle-next)
+    toggle_next
+    ;;
+  *)
+    get_profile
+    ;;
+esac
+

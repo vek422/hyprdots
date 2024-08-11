@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+
+# variables
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+# notification daemon
+# dunst &
+mako &
+clipse -listen
+# waybar
+# $scripts/launch_waybar &
+# $scripts/tools/dynamic &
+gsettings set org.gnome.desktop.interface cursor-size 20
+gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+hyprctl setcursor Bibata-Modern-Ice 20
+
+# $scripts/xdg
+hyprpaper &
+hypridle &
+$scripts/xdg
+# wallpaper
+$scripts/wall $config/wallpapers/wallpaper.jpeg &
+
+# effects
+# $scripts/rgb &
+# dbus-update-activation-environment --systemd --all
+# systemctl --user import-environment QT_QPA_PLATFORMTHEME
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# other
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+# notify-send -a aurora "hello $(whoami)" &
